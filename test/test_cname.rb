@@ -17,7 +17,6 @@ module Test
       else
         verify = repository.include? cname
       end
-      assert(verify, "CNAME is not valid")
     end
 
   end

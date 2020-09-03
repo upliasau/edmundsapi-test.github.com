@@ -18,15 +18,16 @@ $(function(){
 });
 // FAQ - END
 
-// CAROUSEL - START
+// WIDGETS AND APPS - START
 if ($('.carousel-indicators').length > 0) {
-	$('.carousel-indicators a').bind('click.tabLink', function() {
+	$('.carousel-indicators a').bind('click.tabLink', function(){
+
 		var wrapperWidget= $('#wrapperWidget');
 	 	var hrefThis = $(this).attr('href');
-	 	var classWrap = hrefThis.substr(1);
+	 	var classWrapp = hrefThis.substr(1);
 	 	wrapperWidget.removeAttr('class');
-	 	wrapperWidget.addClass(classWrap);
-        $(this).addClass("active");
+	 	wrapperWidget.addClass(classWrapp);
+
 	});
 
 	$('.carousel').carousel({
@@ -34,7 +35,7 @@ if ($('.carousel-indicators').length > 0) {
 		interval: false
 	});
 }
-// CAROUSEL - END
+// WIDGETS AND APPS - END
 
 if ($('.carousel').length > 0) {
 
@@ -45,11 +46,11 @@ if ($('.carousel').length > 0) {
 
     $('.carousel').on('slide', function(event) {
     	var slideNumber = $(event.relatedTarget).data('itemNumber');
-    	$('.app-picture.active').fadeOut(5000, function() {
+    	$('.app-picture.active').fadeOut(500, function() {
     		$(this).removeClass('active');
     		$('[data-slide-number="'+ slideNumber +'"]').addClass('active');
     	});
-    	$('[data-slide-number="'+ slideNumber +'"]').fadeIn(5000);
+    	$('[data-slide-number="'+ slideNumber +'"]').fadeIn(500);
     });
 }
 

@@ -3,14 +3,14 @@
 $(function(){
 	if ($('#faq-1').length > 0) {
  		function scrollTo(element){
-			var elementClick = element.attr("href");		
-			var cutElementClick = elementClick.substring(1);		
-			var destination = $('[name="'+ cutElementClick +'"]').offset().top;		
-			$("html, body").animate({ scrollTop: destination}, 500 );		
+			var elementClick = element.attr("href");
+			var cutElementClick = elementClick.substring(1);
+			var destination = $('[name="'+ cutElementClick +'"]').offset().top;
+			$("html, body").animate({ scrollTop: destination}, 500 );
 			return false;
 		};
- 
-	  	$("a").on('click', function (element) { 
+
+	  	$("a").on('click', function (element) {
 	   		var thisLink = $(this);
 	   		scrollTo(thisLink);
 	  	});
@@ -18,16 +18,15 @@ $(function(){
 });
 // FAQ - END
 
-// WIDGETS AND APPS - START
+// CAROUSEL - START
 if ($('.carousel-indicators').length > 0) {
-	$('.carousel-indicators a').bind('click.tabLink', function(){
-
+	$('.carousel-indicators a').bind('click.tabLink', function() {
 		var wrapperWidget= $('#wrapperWidget');
 	 	var hrefThis = $(this).attr('href');
-	 	var classWrapp = hrefThis.substr(1);
+	 	var classWrap = hrefThis.substr(1);
 	 	wrapperWidget.removeAttr('class');
-	 	wrapperWidget.addClass(classWrapp);
-
+	 	wrapperWidget.addClass(classWrap);
+        $(this).addClass("active");
 	});
 
 	$('.carousel').carousel({
@@ -35,10 +34,10 @@ if ($('.carousel-indicators').length > 0) {
 		interval: false
 	});
 }
-// WIDGETS AND APPS - END
+// CAROUSEL - END
 
 if ($('.carousel').length > 0) {
-	
+
     $('.carousel').carousel({
 	    pause: true,
 		interval: false
@@ -46,11 +45,11 @@ if ($('.carousel').length > 0) {
 
     $('.carousel').on('slide', function(event) {
     	var slideNumber = $(event.relatedTarget).data('itemNumber');
-    	$('.app-picture.active').fadeOut(500, function() {
+    	$('.app-picture.active').fadeOut(5000, function() {
     		$(this).removeClass('active');
     		$('[data-slide-number="'+ slideNumber +'"]').addClass('active');
     	});
-    	$('[data-slide-number="'+ slideNumber +'"]').fadeIn(500);
+    	$('[data-slide-number="'+ slideNumber +'"]').fadeIn(5000);
     });
 }
 
@@ -58,7 +57,7 @@ if ($('#myTab').length > 0) {
     $('#myTab a').click(function (e) {
 	    e.preventDefault();
 	    $(this).tab('show');
-		
+
 	    //moving arrow
 		if ($('.arrow').length > 0) {
 	    	var hrefLink = $(this).attr('href');
@@ -238,7 +237,7 @@ $(function() {
 			if(rightIndex === -1) {
 				$nextShadow.fadeIn(600);
 				$pagerRight[0].style.display = "";
-			}			
+			}
 			if(leftIndex === -1) {
 				$prevShadow.fadeIn(600);
 				$pagerLeft[0].style.display = "";
@@ -256,7 +255,7 @@ $(function() {
 			rightCarousel.to(toStep + 1);
 		});
 
-		// Markers and popups 
+		// Markers and popups
 		$('.inner-marker').on('click', function(event) {
 			var $el = $(this).parent(),
 				markerNumber = $el.data('marker'),
@@ -271,7 +270,7 @@ $(function() {
 				var thisNumber = $(this).data('marker'),
 					thisStep = $(this).data('step');
 				if(thisNumber === markerNumber) {
-					if(thisStep === curStep ) {					
+					if(thisStep === curStep ) {
 						$(this).fadeIn(400);
 					}
 				}
@@ -339,10 +338,10 @@ $(function() {
 			else if($(this).hasClass('gray')) {
 				selectedColor = 'gray';
 			}
-	
+
 			$('.screen-bgnd').removeClass('yellow green gray').addClass(selectedColor);
 		});
-		interval(timeInterval); 
+		interval(timeInterval);
 	}
     $('.btn-glance-selector').on('click', function() {
         var selectedGlance;
@@ -371,7 +370,7 @@ $(function() {
 // WIDGETS - END
 
 $(function(){
-	//Set default active links top menu 
+	//Set default active links top menu
 	function acrivation_link(){
 		//top menu
 		var linkHeaderMenu = $('.headerMenu').find('a');

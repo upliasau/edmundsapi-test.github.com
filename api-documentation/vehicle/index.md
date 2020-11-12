@@ -142,7 +142,7 @@ Here are some common uses of the Vehicle API:
 | [Style](/api-documentation/vehicle/spec_style/v2/) | | | | |
 | [Engine and Transmission](/api-documentation/vehicle/spec_engine_and_transmission/v2/) | | | | |
 | [Colors and Options](/api-documentation/vehicle/spec_colors_and_options/v2/) | | | | |
-| [Equipment](/api-documentation/vehicle/spec_equipment/v2/) | | | | |
+| [Equipment](/api-documentation/vehicle/spec_equipment/v3/) | | | | |
 | [VIN](/api-documentation/vehicle/spec_vin_decoding/v2/) and [SquishVin](/api-documentation/vehicle/spec_squishvin/v2/) | | | | |
 | [Make v3](/api-documentation/vehicle/spec_make/v3/) | | | | |
 | [Model Year v3](/api-documentation/vehicle/spec_model_year/v3/) | | | | |

@@ -83,15 +83,15 @@ number: 3
 | totalPages                      | Total number of pages based on <code>pagesize</code> query param | Edmunds, Partners, Public |
 | results                         | Result list                                                      | Edmunds, Partners, Public |
 | id                              | The Car Style Id                                                 | Edmunds, Partners, Public |
-| makeId                          | The Car Style Make Id                                            | Edmunds, Partners, Public |
 | year                            | The Car Style Year                                               | Edmunds, Partners, Public |
-| makeName                        | The Car Style Make Name                                          | Edmunds, Partners, Public |
-| makeNiceName                    | The Car Style Make Nice Name                                     | Edmunds, Partners, Public |
-| makeNiceId                      | The Car Style Make Nice Id                                       | Edmunds, Partners, Public |
-| modelId                         | The Car Style Model Id                                           | Edmunds, Partners, Public |
-| modelName                       | The Car Style Model Name                                         | Edmunds, Partners, Public |
-| modelNiceName                   | The Car Style Model Nice Name                                    | Edmunds, Partners, Public |
-| modelNiceId                     | The Car Style Model Nice Id                                      | Edmunds, Partners, Public |
+| makeId                          | The Car Make Id (e.g. 200000130)                                 | Edmunds, Partners, Public |
+| makeName                        | The Car Make Name (e.g. Mercedes-Benz)                           | Edmunds, Partners, Public |
+| makeNiceName                    | The Car Make Nice Name d (e.g. mercedes-benz)                    | Edmunds, Partners, Public |
+| makeNiceId                      | The Car Make Nice Id e (e.g. mercedesbenz)                       | Edmunds, Partners, Public |
+| modelId                         | The Car Model Id (e.g. Mercedes_Benz_E_Class)                    | Edmunds, Partners, Public |
+| modelName                       | The Car Model Name (e.g. E-Class)                                | Edmunds, Partners, Public |
+| modelNiceName                   | The Car Model Nice Name (e.g. eclass)                            | Edmunds, Partners, Public |
+| modelNiceId                     | The Car Model Nice Id (e.g. e-class)                             | Edmunds, Partners, Public |
 | modelYearId                     | The Car Style Model Year Id                                      | Edmunds, Partners, Public |
 | modelLinkCode                   | The Car Style Model Link Code                                    | Edmunds, Partners, Public |
 | standardEngine                  | The Car Style Standard Engine                                    | Edmunds, Partners, Public |
@@ -187,14 +187,14 @@ The properties within the <code>price</code> object are:
       "estimateTmv": {boolean}
     }
 
-| Property          | Description        | Visibility                |
-|:------------------|:-------------------|:------------------------- |
-| baseMSRP          | Base MSRP          | Edmunds, Partners, Public |
-| baseInvoice       | Base Invoice       | Edmunds, Partners, Public |
-| usedTmvRetail     | Used Tmv Retail    | Edmunds, Partners, Public |
-| usedPrivateParty  | Used Private Party | Edmunds, Partners, Public |
-| usedTradeIn       | Used Trade In      | Edmunds, Partners, Public |
-| estimateTmv       | Estimate Tmv       | Edmunds, Partners, Public |
+| Property          | Description                                                                                       | Visibility                |
+|:------------------|:--------------------------------------------------------------------------------------------------|:------------------------- |
+| baseMSRP          | Base MSRP (vehicle's price without options)                                                       | Edmunds, Partners, Public |
+| baseInvoice       | Base Invoice (invoice, which is the price the manufacturer sells the style to the dealership for) | Edmunds, Partners, Public |
+| usedTmvRetail     | Used Tmv Retail                                                                                   | Edmunds, Partners, Public |
+| usedPrivateParty  | Used Private Party                                                                                | Edmunds, Partners, Public |
+| usedTradeIn       | Used Trade In                                                                                     | Edmunds, Partners, Public |
+| estimateTmv       | Estimate Tmv                                                                                      | Edmunds, Partners, Public |
 
 The properties within the <code>configurableEquipment</code> object are:
 
@@ -243,6 +243,10 @@ The properties within the <code>regionRestrictions</code> object are:
       ],
       ...
     }
+
+<div class="info-message">
+  Leaf Specification object representing a "fee" that can be applied to the various prices (e.g., base MSRP, total configured invoice, etc.) of a given style.  The fee can either be a percentage or a whole number, and will be interpreted differently based on the fee calculation type.
+</div>
 
 | Property            | Description                          | Visibility                |
 |:--------------------|:-------------------------------------|:------------------------- |

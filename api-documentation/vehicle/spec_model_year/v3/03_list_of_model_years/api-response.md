@@ -87,7 +87,7 @@ number: 3
 | types             | The Car Types                                                    | Edmunds, Partners, Public |
 | categoryValues    | The Car Category Values                                          | Edmunds, Partners, Public |
 | publicationStates | The Car Publication States                                       | Edmunds, Partners, Public |
-| minBaseMSRP       | The Car Min Base MSRP                                            | Edmunds, Partners, Public |
+| minBaseMSRP       | The Car Min Base MSRP (vehicle's price without options)          | Edmunds, Partners, Public |
 | tmvCorePercents   | The Car Tmv Core Percents                                        | Edmunds, Partners, Public |
 | edTypeCategories  | The Car Edmunds Type Categories                                  | Edmunds, Partners, Public |
 
@@ -142,7 +142,7 @@ The properties within the <code>categories</code> and <code>types</code> objects
     {
       "{categoryOrTypeName1}": [{string value1}, {string value2}, ...],
       "{categoryOrTypeName2}": [{string value1}, {string value2}, ...],
-      ...
+      ...   
     }
 
 | Property           | Description                                                                                | Visibility                |

@@ -57,22 +57,23 @@ number: 3
 The properties within the <code>price</code> object are:
 
     {
-      ...
-      "price": {
-        "usedTmvRetail": {double},
-        "usedPrivateParty": {double},
-        "usedTradeIn": {double},
-        "estimateTmv": {boolean},
-      },
-      ...
+      "baseMSRP": {double},
+      "baseInvoice": {double},
+      "deliveryCharges": {double},
+      "usedTmvRetail": {double},
+      "usedPrivateParty": {double},
+      "usedTradeIn": {double},
+      "estimateTmv": {boolean}
     }
 
-| Property          | Description        | Visibility                |
-|:------------------|:-------------------|:------------------------- |
-| usedTmvRetail     | Used Tmv Retail    | Edmunds, Partners, Public |
-| usedPrivateParty  | Used Private Party | Edmunds, Partners, Public |
-| usedTradeIn       | Used Trade In      | Edmunds, Partners, Public |
-| estimateTmv       | Estimate Tmv       | Edmunds, Partners, Public |
+| Property          | Description                                                                                       | Visibility                |
+|:------------------|:--------------------------------------------------------------------------------------------------|:------------------------- |
+| baseMSRP          | Base MSRP (vehicle's price without options)                                                       | Edmunds, Partners, Public |
+| baseInvoice       | Base Invoice (invoice, which is the price the manufacturer sells the style to the dealership for) | Edmunds, Partners, Public |
+| usedTmvRetail     | Used Tmv Retail                                                                                   | Edmunds, Partners, Public |
+| usedPrivateParty  | Used Private Party                                                                                | Edmunds, Partners, Public |
+| usedTradeIn       | Used Trade In                                                                                     | Edmunds, Partners, Public |
+| estimateTmv       | Estimate Tmv                                                                                      | Edmunds, Partners, Public |
 
 The properties within the <code>attributeGroups</code> object are:
 

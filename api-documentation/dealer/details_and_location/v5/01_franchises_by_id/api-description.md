@@ -1,18 +1,18 @@
 ---
 layout: api-documentation
-title : 'Find Rooftop Dealers by zipcode'
+title : 'Get Dealer Details and Location'
 title_active_left_menu: 'Details and Location'
 title_parent: Api documentation
 
 amount_version: 125
-title-endpoint: 'Find Rooftop Dealers by zipcode'
+title-endpoint: 'Find Dealership Franchises by Id'
 spec: details_and_location
-version: v2
+version: v5
 api: dealer
-dropdown-link: 'api/dealer/v2/dealers'
+dropdown-link: 'api/dealer/v5/dealership/{id}/franchises'
 
 level: 3
-description_edpoint: 'Find Rooftop Dealers by zipcode'
+description_edpoint: 'Find Dealership Franchises'
 title_md : Description
 number: 1
 
@@ -21,11 +21,11 @@ number: 1
 
 ### Description
 
-Find Rooftop Dealers by ZIP code with a specific radius and/or specific car make
+Find Dealership Franchises
 
 ### URL
 
-    https://api.edmunds.com/api/dealer/v2/dealers?zipcode={zipcode}&fmt=json&api_key={api_key}&fmt=json
+    https://api.edmunds.com/api/dealer/v5/dealership/{id}/franchises?api_key={api_key}
     
 ### Code Example
 
@@ -47,14 +47,12 @@ You need the [Javascript SDK](https://github.com/EdmundsAPI/edmunds-javascript-s
                 var res = new EDMUNDSAPI('YOUR API KEY');
 
                 // Optional parameters
-                var options = {
-                    "zipcode": "90019"
-                };
+                var options = {};
 
                 // Callback function to be called when the API response is returned
                 function success(res) {
                     var body = document.getElementById('results-body');
-                    body.innerHTML = "This dealer's name is : " + res.dealers[0].name;
+                    body.innerHTML = "The first franchise id is : " + res.franchises[0].id;
                 }
 
                 // Oops, Houston we have a problem!
@@ -63,7 +61,7 @@ You need the [Javascript SDK](https://github.com/EdmundsAPI/edmunds-javascript-s
                 }
 
                 // Fire the API call
-                res.api('/api/dealer/v2/dealers', options, success, fail);
+                res.api('/api/dealer/v5/dealership/897674/franchises', options, success, fail);
 
                 // Additional initialization code such as adding Event Listeners goes here
             };
